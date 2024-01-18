@@ -18,6 +18,8 @@
 #define PIN_Y 3
 #define PIN_R 2
 
+#define GRBL_FROM 6
+#define GRBL_TO 7
 
 
 String lstate = "";
@@ -107,7 +109,7 @@ extern "C" int milliseconds() {
 void setup() {
 
     Serial.begin(115200);
-    Serial1.begin(115200, SERIAL_8N1, 2, 4);
+    Serial1.begin(115200, SERIAL_8N1, GRBL_FROM, GRBL_TO);
 
     Serial.println("FluidNC stacklight status");
 
